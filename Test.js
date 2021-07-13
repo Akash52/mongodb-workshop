@@ -12,7 +12,20 @@ const connect = () => {
 //Here We Create our First Schema
 
 const studentSchema = new mongoose.Schema({
-  firstname: String,
+  firstname: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  info: {
+    school: {
+      type: String,
+    },
+    shoesSize: {
+      type: Number,
+      required: true,
+    },
+  },
 })
 
 //Here We Create Our Model
